@@ -1,9 +1,9 @@
 import { motion, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
-import MessageParagraph from "../components/MessageParagraph";
-import Header from "../components/Header";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import BirthdayMessageCard from "../components/BirthdayMessageCard";
+import Header from "../components/Header";
+import MessageParagraph from "../components/MessageParagraph";
 
 const Message = () => {
   const messageSongRef = useRef<HTMLAudioElement>(null);
