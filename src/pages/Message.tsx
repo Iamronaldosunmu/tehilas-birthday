@@ -1,6 +1,5 @@
 import { motion, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
 import BirthdayMessageCard from "../components/BirthdayMessageCard";
 import Header from "../components/Header";
 import MessageParagraph from "../components/MessageParagraph";
@@ -9,7 +8,7 @@ const Message = () => {
   const messageSongRef = useRef<HTMLAudioElement>(null);
   const playlistSectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(playlistSectionRef, { once: true, amount: 0.8 });
-  const navigate = useNavigate();
+
   useEffect(() => {
     messageSongRef.current?.play();
   });
@@ -84,7 +83,14 @@ const Message = () => {
           />
         </div>
       </section>
-      <section ref={playlistSectionRef}>
+      <motion.section
+        animate={{
+          opacity: isInView ? 1 : 0,
+          scale: isInView ? 1 : 0.95,
+          transition: { duration: 2, delay: 1 },
+        }}
+        ref={playlistSectionRef}
+      >
         <Header text="Birthday Playlist🥰" />
         <article className="text-center mt-[10px] text-[white] syneFont font-semibold">
           A compilation of my favorite songs that truly express how I feel about
@@ -120,7 +126,7 @@ const Message = () => {
             Play On Spotify
           </p>
         </figure>
-      </section>
+      </motion.section>
     </main>
   );
 };
