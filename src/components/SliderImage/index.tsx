@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 interface SliderImageProps {
   position: number;
@@ -20,10 +19,9 @@ const SliderImage: React.FC<SliderImageProps> = ({ position }) => {
         },
       }}
     >
-      <LazyLoadImage
-        effect="blur"
+      <img
         src={`/Home/tehilaspictures/t${position}.jpg`}
-        className="h-[133px] min-w-[133px] rounded-[10px] object-cover"
+        className="h-[120px] min-w-[120px] rounded-[10px] object-cover"
       />
     </motion.div>
   );
