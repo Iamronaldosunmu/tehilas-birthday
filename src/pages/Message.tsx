@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 import BirthdayMessageCard from "../components/BirthdayMessageCard";
 import Header from "../components/Header";
 import MessageParagraph from "../components/MessageParagraph";
+import MessagePicture from "../assets/messagePicture.png";
 
 const Message = () => {
   const messageSongRef = useRef<HTMLAudioElement>(null);
@@ -43,7 +44,7 @@ const Message = () => {
             },
           }}
           className="w-full "
-          src="/Message/messagePicture.png"
+          src={MessagePicture}
         />
         <motion.div
           initial={{ width: "100%" }}
@@ -69,7 +70,7 @@ const Message = () => {
           <BirthdayMessageCard
             name="Tobi"
             image="/Message/Friends/mosh.png"
-            text={`Happy Birthday Tehila!🎉 \nI want to use this medium to thank you for being a part of Ronald's life because ever since he met you, has been his happiest for real! \nAnd also incase you're wondering how the podcast recording went, I tried my best😂😂😂 \nWishing you the very best in all you do🥳`}
+            text={`Happy Birthday Tehila!🎉 \nI want to use this medium to thank you for being a part of Ronald's life because ever since he met you, he has been his happiest for real!😂 \nAnd also incase you're wondering how the podcast recording went, I tried my best😂😂😂 \nWishing you the very best in all you do🥳`}
           />
           <BirthdayMessageCard
             name="Samuel"
@@ -101,7 +102,7 @@ const Message = () => {
         <figure className="w-[260px] h-[260px] mx-auto rounded-[15px] overflow-hidden relative mt-[20px]">
           <img
             className="w-full h-full object-cover"
-            src="/Message/messagePicture.png"
+            src={MessagePicture}
           />
           <div className="w-full h-full text-[white] absolute top-0 left-0 flex items-center justify-center text-[30px] font-bold">
             <img src="/theart.png" className="w-[100px]" />

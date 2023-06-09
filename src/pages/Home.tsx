@@ -2,28 +2,27 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SliderImage from "../components/SliderImage";
+import BlurredBackgroundImage from "../assets/blurredBackground.png";
 
 const Home = () => {
   const [animationStarted, setAnimationStarted] = useState(false);
-  const [time, setTime] = useState("")
+  const [time, setTime] = useState("");
   const [twelveHourSuffix, setTwelveHourSuffix] = useState("");
   const navigate = useNavigate();
 
   const updateTime = () => {
     let currentTime = new Date().toTimeString().slice(0, 5);
-    let hour = currentTime.slice(0, 2)
+    let hour = currentTime.slice(0, 2);
     if (parseInt(hour) > 12) {
       currentTime = (parseInt(hour) - 12).toString() + currentTime.slice(2);
       setTwelveHourSuffix("PM");
-    }
-    else if (hour == "00") {
+    } else if (hour == "00") {
       currentTime = "12" + currentTime.slice(2);
-    }
-    else {
+    } else {
       setTwelveHourSuffix("AM");
     }
     setTime(currentTime);
-  }
+  };
 
   //Start the slider animation
   useEffect(() => {
@@ -58,7 +57,7 @@ const Home = () => {
               <div className="z-10 relative">June 10</div>
               <img
                 className="absolute -top-[40px] scale-150 left-0 right-0 bottom-0 z-0"
-                src="/Home/blurredBackground.png"
+                src={BlurredBackgroundImage}
               />
             </div>
             <p>
@@ -78,7 +77,7 @@ const Home = () => {
             >
               <img
                 className="w-full h-full absolute top-0 right-0 left-0 bottom-0"
-                src="/Home/blurredBackground.png"
+                src={BlurredBackgroundImage}
               />
               <div className="relative z-10 text-[white] max-w-[250px] mx-auto">
                 <img

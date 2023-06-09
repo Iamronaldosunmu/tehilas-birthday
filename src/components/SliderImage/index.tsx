@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 interface SliderImageProps {
   position: number;
@@ -6,7 +7,7 @@ interface SliderImageProps {
 
 const SliderImage: React.FC<SliderImageProps> = ({ position }) => {
   return (
-    <motion.img
+    <motion.div
       initial={{ scale: 0.9, opacity: 0, y: 10 }}
       animate={{
         scale: 1,
@@ -18,9 +19,13 @@ const SliderImage: React.FC<SliderImageProps> = ({ position }) => {
           ease: [0.43, 0.13, 0.23, 0.96],
         },
       }}
-      src={`/Home/tehilaspictures/t${position}.jpg`}
-      className="h-[133px] min-w-[133px] rounded-[10px] object-cover"
-    />
+    >
+      <LazyLoadImage
+        effect="blur"
+        src={`/Home/tehilaspictures/t${position}.jpg`}
+        className="h-[133px] min-w-[133px] rounded-[10px] object-cover"
+      />
+    </motion.div>
   );
 };
 
