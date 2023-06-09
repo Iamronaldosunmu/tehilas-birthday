@@ -18,6 +18,8 @@ const Home = () => {
       setTwelveHourSuffix("PM");
     } else if (hour == "00") {
       currentTime = "12" + currentTime.slice(2);
+      setTwelveHourSuffix("AM")
+      console.log
     } else {
       setTwelveHourSuffix("AM");
     }
