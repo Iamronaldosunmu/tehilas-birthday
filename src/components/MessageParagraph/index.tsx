@@ -1,5 +1,5 @@
 import { motion, useInView } from "framer-motion";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useRef } from "react";
 
 interface MessageParagraphProps {
     text: string;

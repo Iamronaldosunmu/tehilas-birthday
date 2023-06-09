@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
-import SliderImage from "../components/SliderImage";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import SliderImage from "../components/SliderImage";
 
 const Home = () => {
   const [animationStarted, setAnimationStarted] = useState(false);
